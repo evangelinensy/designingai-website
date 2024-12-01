@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sparkles, Users, BookOpen, Send } from 'lucide-react'
-import { submitEmail } from "./actions"
+import { EmailForm } from "@/app/components/EmailForm"
 
 export default function Page() {
   return (
@@ -40,24 +40,7 @@ export default function Page() {
                   resources, insights, and connect with peers.
                 </p>
               </div>
-              <div className="w-full max-w-sm space-y-2">
-                <form className="flex space-x-2" action={submitEmail}>
-                  <Input
-                    className="max-w-lg flex-1"
-                    placeholder="Enter your email"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                  <Button type="submit">
-                    <Send className="mr-2 h-4 w-4" />
-                    Join Waitlist
-                  </Button>
-                </form>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Join the waitlist to get early access when we launch.
-                </p>
-              </div>
+              <EmailForm />
             </div>
           </div>
         </section>
